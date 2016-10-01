@@ -20,6 +20,7 @@ include $(TOPDIR)/Make.version
 	$(CCLD) $(ccldflags) $(CPPFLAGS) $(SOFLAGS) \
 	  -Wl,-soname,$@.1 \
 	  -Wl,--version-script=$(MAP) \
+	  -Wl,-z,muldefs \
 	  -o $@ $^ $(LDLIBS)
 
 %.o : %.c
